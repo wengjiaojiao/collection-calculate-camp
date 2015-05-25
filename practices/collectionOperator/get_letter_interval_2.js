@@ -3,6 +3,9 @@
 function get_letter_interval_2(number_a, number_b) {
     var result = [];
     var judge = false;
+    var SINGLE = 26;
+    var COUPLE = 52;
+
     if(number_a > number_b) {
         var c = number_b;
         number_b = number_a;
@@ -10,14 +13,20 @@ function get_letter_interval_2(number_a, number_b) {
         judge = true;
     }
     for(var i=number_a;i<=number_b;i++) {
-        if(i<=26) {
+        var x = i,addition;
+
+        x=parseInt(x/SINGLE);
+        x = i/SINGLE === 2 ? 1:x;
+        addition = String.fromCharCode(x+96);
+
+        if(i<=SINGLE) {
             result.push(String.fromCharCode(i+96));
-        }else if(26<i && i<53) {
-            var j = i - 26;
-            result.push("a"+String.fromCharCode(j+96));
+        }else if(SINGLE<i && i<=COUPLE) {
+            var j = i - SINGLE;
+            result.push(addition+String.fromCharCode(j+96));
         }else {
-            var k = i -52;
-            result.push("b"+String.fromCharCode(k+96));
+            var k = i -COUPLE;
+            result.push(addition+String.fromCharCode(k+96));
         }
     }
     if(judge) {
