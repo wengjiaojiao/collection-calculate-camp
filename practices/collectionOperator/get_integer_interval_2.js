@@ -13,11 +13,24 @@ function get_integer_interval_2(number_a, number_b) {
             collection.push(j);
         }
     }
-    var result = _.remove(collection,function(n){
-        return n % 2 == 0;
+    var even = [];
+    
+    for(var k=0; k<collection.length; k++) {
+        if(collection[k] % 2 == 0) {
+            even.push(collection[k]);
         }
-    )
-    return result;
+    }
+
+    return even;
 }
 
 module.exports = get_integer_interval_2;
+
+
+
+
+
+//var result = _.remove(collection,function(n){
+//    return n % 2 == 0;
+//    }
+//)
