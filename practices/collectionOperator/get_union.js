@@ -10,7 +10,7 @@ function get_union(collection_a, collection_b) {
     }
     var mix = collection_a.concat(collection_b);
 
-    return minx;
+    return mix;
 }
 
 module.exports = get_union;
