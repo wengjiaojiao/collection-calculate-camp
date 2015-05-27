@@ -4,6 +4,19 @@ function choose_no_repeat_number(collection) {
     var no_repeat = [];
 
     for(var i = 0; i < collection.length; i++) {
+        if(collection[i] === collection[i+1]) {
+            continue;
+        }
+        no_repeat.push(collection[i]);
+    }
+    return no_repeat;
+}
+module.exports = choose_no_repeat_number;
+
+/*
+    var no_repeat = [];
+
+    for(var i = 0; i < collection.length; i++) {
         var exist = false;
 
         for(var j = 0; j < no_repeat.length; j++) {
@@ -16,14 +29,5 @@ function choose_no_repeat_number(collection) {
         }
     }
     return no_repeat;
-}
-
-module.exports = choose_no_repeat_number;
-
-
-
-
-
-
-
+*/
 //return _.uniq(collection,true);
