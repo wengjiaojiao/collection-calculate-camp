@@ -3,7 +3,7 @@
 function choose_multiples_of_three(collection) {
     var time = [];
 
-    for(var i=0; i<collection.length; i++) {
+    for(var i = 0; i < collection.length; i++) {
         if(collection[i] % 3 == 0) {
             time.push(collection[i]);
         }
