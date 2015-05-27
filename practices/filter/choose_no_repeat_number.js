@@ -3,10 +3,10 @@
 function choose_no_repeat_number(collection) {
     var no_repeat = [];
 
-    for(var i=0; i<collection.length; i++) {
+    for(var i = 0; i < collection.length; i++) {
         var exist = false;
 
-        for(var j=0; j<no_repeat.length; j++) {
+        for(var j = 0; j < no_repeat.length; j++) {
             if(collection[i] === no_repeat[j]) {
                 exist = true;
             }
