@@ -26,7 +26,7 @@ function compute_chain_median(collection) {
     if(num_array.length % 2 == 0 ) {
         median = (num_array[middle] + num_array[middle-1]) / 2;
     }else {
-        median = (num_array.length - 1) / 2;
+        median = collection[middle];
     }
 
     return median;
