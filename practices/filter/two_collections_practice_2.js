@@ -9,8 +9,10 @@ function choose_no_common_elements(collection_a, collection_b) {
             }
         }
     }
-    var difference = collection_a.concat(collection_b);
-    return difference;
+    for (var a = 0; a < collection_b.length; a++) {
+        collection_a[collection_a.length] = collection_b[a];
+    }
+    return collection_a;
 }
 
 module.exports = choose_no_common_elements;
