@@ -29,8 +29,14 @@ function get_letter_interval_2(number_a, number_b) {
             result.push(addition+String.fromCharCode(k+96));
         }
     }
+    var number;
+
     if(judge) {
-        result.reverse();
+        for (var a = 0; a < result.length/2; a++) {
+            number = result[result.length -1 -a];
+            result[result.length -1-a] = result[a];
+            result[a] = number;
+        }
     }
     return result;
 }
