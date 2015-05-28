@@ -2,6 +2,7 @@
 
 function hybrid_operation_to_uneven(collection) {
     var temp = [];
+
     for (var i = 0; i < collection.length; i++) {
         if(collection[i] % 2 != 0) {
             temp[temp.length] = collection[i] * 3 + 2;
