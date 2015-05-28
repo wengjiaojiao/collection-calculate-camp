@@ -3,10 +3,10 @@
 var number_map_to_word = function(collection){
     var map = [];
 
-    for(var i = 0; i < collection.length; i++) {
-        var letter = String.fromCharCode(collection[i]+96);
-        map.push(letter);
-    }
+        for(var i = 0; i < collection.length; i++) {
+            var letter = String.fromCharCode(collection[i]+96);
+            map.push(letter);
+        }
     return map;
 }
 
