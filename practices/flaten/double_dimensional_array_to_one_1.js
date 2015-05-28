@@ -2,6 +2,7 @@
 
 function double_to_one(collection) {
     var all = [];
+    
     for(var i= 0; i < collection.length; i++) {
         if(collection[i].length == undefined) {
             all.push(collection[i]);
