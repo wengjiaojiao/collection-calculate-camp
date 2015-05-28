@@ -8,9 +8,11 @@ function get_union(collection_a, collection_b) {
             }
         }
     }
-    var mix = collection_a.concat(collection_b);
 
-    return mix;
+    for (var a = 0; a < collection_b.length; a++) {
+        collection_a[collection_a.length] = collection_b[a];
+    }
+    return collection_a;
 }
 
 module.exports = get_union;
