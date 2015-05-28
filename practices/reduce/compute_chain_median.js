@@ -11,11 +11,11 @@ function compute_chain_median(collection) {
     var temp;
 
     for (var i = 0; i < num_array.length; i++) {
-        for (var j = 0; j < num_array.length; j++) {
+        for (var j = i + 1; j < num_array.length; j++) {
             if(num_array[i] > num_array[j]) {
                 temp = num_array[i];
                 num_array[i] = num_array[j];
-                num_array[j] = temp;	
+                num_array[j] = temp;
             }
         }
     }
