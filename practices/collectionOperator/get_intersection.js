@@ -2,16 +2,15 @@
 
 function get_intersection(collection_a, collection_b) {
     var collection = [];
-    
-    for(var i=0; i<collection_a.length; i++) {
-        for(var j=0; j< collection_b.length; j++) {
-            if(collection_a[i] === collection_b[j]) {
-                collection.push(collection_a[i]);
+
+    for(var i=0; i<collection_b.length; i++) {
+        for(var j=0; j< collection_a.length; j++) {
+            if(collection_b[i] === collection_a[j]) {
+                collection.push(collection_b[i]);
             }
         }
     }
-    var last = collection.pop();
-    collection.unshift(last);
+
     return collection;
 }
 
