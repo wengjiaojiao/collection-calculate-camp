@@ -1,41 +1,39 @@
 'use strict';
+function build_letter(x,i,SINGLE,COUPLE,result) {
+    x=parseInt(x/SINGLE);
+    x = i/SINGLE === 2 ? 1:x;
+    var addition = from_char_code(x);
 
+    if(i<=SINGLE) {
+        result.push(from_char_code(i));
+    }else if(SINGLE<i && i<=COUPLE) {
+        var j = i - SINGLE;
+        result.push(addition+from_char_code(j));
+    }else {
+        var k = i -COUPLE;
+        result.push(addition+from_char_code(k));
+    }
+}
+function from_char_code(i) {
+    return String.fromCharCode(i+96);
+}
 function get_letter_interval_2(number_a, number_b) {
     var result = [];
-    var judge = false;
     var SINGLE = 26;
     var COUPLE = 52;
 
     if(number_a > number_b) {
-        var c = number_b;
-        number_b = number_a;
-        number_a = c;
-        judge = true;
-    }
-    for(var i=number_a;i<=number_b;i++) {
-        var x = i,addition;
+        for(var i=number_a;i>=number_b;i--) {
+            var x = i,addition;
 
-        x=parseInt(x/SINGLE);
-        x = i/SINGLE === 2 ? 1:x;
-        addition = String.fromCharCode(x+96);
-
-        if(i<=SINGLE) {
-            result.push(String.fromCharCode(i+96));
-        }else if(SINGLE<i && i<=COUPLE) {
-            var j = i - SINGLE;
-            result.push(addition+String.fromCharCode(j+96));
-        }else {
-            var k = i -COUPLE;
-            result.push(addition+String.fromCharCode(k+96));
+            build_letter(x,i,SINGLE,COUPLE,result);
         }
-    }
-    var number;
 
-    if(judge) {
-        for (var a = 0; a < result.length/2; a++) {
-            number = result[result.length -1 -a];
-            result[result.length -1-a] = result[a];
-            result[a] = number;
+    }else {
+        for(var i=number_a;i<=number_b;i++) {
+            var x = i,addition;
+
+            build_letter(x,i,SINGLE,COUPLE,result);
         }
     }
     return result;
