@@ -1,7 +1,7 @@
 'use strict';
 
 function collect_max_number(collection) {
-    var _ = require("../../mytool");
+    var _ = require("../../mytool/max.js");
 
     return _.max(collection);
 }
