@@ -11,9 +11,9 @@ _.foreach = function(collection,fun) {
 
 _.map = function(collection,fun) {
     var result = [];
-    for (var i = 0; i < collection.length; i++) {
-        result[result.length] = fun(collection[i]);
-    }
+    _.foreach(collection,function(n) {
+        result[result.length] = fun(n);
+    })
     return result;
 }
 
@@ -54,7 +54,6 @@ _.sum = function(collection) {
     })
     return sum;
 }
-
 
 
 _.first = function(collection,fun) {
