@@ -3,6 +3,12 @@ function _ () {
 
 }
 
+_.foreach = function(collection,fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i]);
+    }
+}
+
 _.map = function(collection,fun) {
     var result = [];
     for (var i = 0; i < collection.length; i++) {
@@ -20,14 +26,13 @@ _.exist = function(collection,element) {
     return false;
 }
 
-
 _.max = function(collection) {
     var max = 0;
-    for(var i = 0; i < collection.length; i ++) {
-	if(collection[max] < collection[i]) {
-            max = i;
-        }
-    }
+    _.foreach(collection,function(n){
+        if(collection[max] < n) {
+            collection[max] = n;
+            }
+    })
     return collection[max];
 }
 
@@ -72,11 +77,7 @@ _.last = function(collection,fun) {
     }
 }
 
-_.foreach = function(collection,fun) {
-    for (var i = 0; i < collection.length; i++) {
-        fun(collection[i]);
-    }
-}
+
 
 
 module.exports = _;
