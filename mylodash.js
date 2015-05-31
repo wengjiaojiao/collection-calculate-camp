@@ -2,6 +2,15 @@
 function _ () {
 
 }
+
+_.map = function(collection,fun) {
+    var result = [];
+    for (var i = 0; i < collection.length; i++) {
+        result[result.length] = fun(collection[i]);
+    }
+    return result;
+}
+
 _.exist = function(collection,element) {
     for (var i = 0; i < collection.length; i++) {
         if(collection[i] === element) {
@@ -34,19 +43,14 @@ _.min = function(collection) {
 
 _.sum = function(collection) {
     var sum = 0;
-    for (var i = 0; i < collection.length; i++) {
-        sum += collection[i];
-    }
+
+    _.foreach(collection,function(n){
+        sum += n;
+    })
     return sum;
 }
 
-_.map = function(collection,fun) {
-    var result = [];
-    for (var i = 0; i < collection.length; i++) {
-        result[result.length] = fun(collection[i]);
-    }
-    return result;
-}
+
 
 _.first = function(collection,fun) {
     var number = 0;
@@ -68,7 +72,11 @@ _.last = function(collection,fun) {
     }
 }
 
-
+_.foreach = function(collection,fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i]);
+    }
+}
 
 
 module.exports = _;
