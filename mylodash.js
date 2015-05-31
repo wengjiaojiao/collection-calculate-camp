@@ -2,6 +2,15 @@
 function _ () {
 
 }
+_.exist = function(collection,element) {
+    for (var i = 0; i < collection.length; i++) {
+        if(collection[i] === element) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 _.max = function(collection) {
     var max = 0;
@@ -22,4 +31,19 @@ _.min = function(collection) {
     }
     return collection[min];
 }
+
+_.sum = function(collection) {
+    var sum = 0;
+    for (var i = 0; i < collection.length; i++) {
+        sum += collection[i];
+    }
+    return sum;
+}
+
+
+
+
+
+
+
 module.exports = _;
