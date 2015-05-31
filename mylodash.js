@@ -38,11 +38,11 @@ _.max = function(collection) {
 
 _.min = function(collection) {
     var min = 0 ;
-    for (var i = 0; i < collection.length; i++) {
-        if(collection[min] > collection[i]) {
-            min = i;
+    _.foreach(collection,function(n){
+        if(collection[min] > n) {
+            collection[min] = n;
         }
-    }
+    })
     return collection[min];
 }
 
