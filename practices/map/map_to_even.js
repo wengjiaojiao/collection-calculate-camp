@@ -1,17 +1,12 @@
 'use strict';
 function map_to_even(collection){
-    var result = [];
-    for (var i = 0; i < collection.length; i++) {
-        result.push(map(collection[i]));
-    }
-    return result;
+    var _ = require('../../mylodash.js');
+
+    return _.map(collection,twotimes);
 }
 
-function map(i) {
-    return i * 2 ;
+function twotimes(n) {
+    return n * 2 ;
 }
-
-
-
 
 module.exports = map_to_even;
