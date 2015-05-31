@@ -48,7 +48,15 @@ _.map = function(collection,fun) {
     return result;
 }
 
-
+_.first = function(collection,fun) {
+    var number = 0;
+    for (var i = 0; i < collection.length; i++) {
+        if(fun(collection[i])) {
+            number = collection[i];
+            return number;
+        }
+    }
+}
 
 
 
