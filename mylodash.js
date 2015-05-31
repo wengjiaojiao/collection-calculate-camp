@@ -40,6 +40,14 @@ _.sum = function(collection) {
     return sum;
 }
 
+_.map = function(collection,fun) {
+    var result = [];
+    for (var i = 0; i < collection.length; i++) {
+        result[result.length] = fun(collection[i]);
+    }
+    return result;
+}
+
 
 
 
