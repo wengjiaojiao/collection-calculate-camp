@@ -1,16 +1,16 @@
 'use strict';
 
 function choose_even(collection) {
-    var even = [];
+    var _ = require('../../mylodash.js');
 
-    for(var i = 0; i < collection.length; i++) {
-        if(collection[i] % 2 == 0) {
-            even.push(collection[i]);
-        }
-    }
-    return even;
+    return _.filter(collection,evens);
 }
 
+function evens(n) {
+    if(n % 2 == 0) {
+        return true;
+    }
+}
 module.exports = choose_even;
 
 
