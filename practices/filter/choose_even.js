@@ -7,9 +7,7 @@ function choose_even(collection) {
 }
 
 function evens(n) {
-    if(n % 2 == 0) {
-        return true;
-    }
+        return n % 2 == 0;
 }
 module.exports = choose_even;
 
