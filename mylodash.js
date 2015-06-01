@@ -30,18 +30,6 @@ _.exist = function(collection,element) {
 }
 
 
-_.last = function(collection,fun) {
-    var number = 0;
-
-    for (var i = collection.length - 1; i >= 0; i--) {
-        if(fun(collection[i])) {
-            number = collection[i];
-            return number;
-        }
-    }
-}
-
-
 _.filter = function(collection,fun) {
     var result = [] ;
 
