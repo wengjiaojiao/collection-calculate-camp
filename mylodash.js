@@ -5,7 +5,7 @@ function _ () {
 
 _.foreach = function(collection,fun) {
     for (var i = 0; i < collection.length; i++) {
-        fun(collection[i]);
+        fun(collection[i],i);
     }
 }
 
@@ -26,30 +26,6 @@ _.exist = function(collection,element) {
         }
     })
     return false;
-}
-
-
-_.max = function(collection) {
-    var max = 0;
-
-    _.foreach(collection,function(n){
-        if(collection[max] < n) {
-            collection[max] = n;
-        }
-    })
-    return collection[max];
-}
-
-
-_.min = function(collection) {
-    var min = 0 ;
-
-    _.foreach(collection,function(n){
-        if(collection[min] > n) {
-            collection[min] = n;
-        }
-    })
-    return collection[min];
 }
 
 
@@ -99,4 +75,16 @@ _.filter = function(collection,fun) {
 }
 
 
+_.reduce = function(collection,fun) {
+    var result = collection[0];
+
+    _.foreach(collection,function(n,i) {
+        if(i === 0) {
+            result = collection[i];
+        }else {
+            result = fun(result,n);
+        }
+    });
+    return result;
+}
 module.exports = _;
