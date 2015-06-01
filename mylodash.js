@@ -18,11 +18,11 @@ _.map = function(collection,fun) {
 }
 
 _.exist = function(collection,element) {
-    for (var i = 0; i < collection.length; i++) {
-        if(collection[i] === element) {
+    _.foreach(collection,function(n){
+        if(n === element) {
             return true;
         }
-    }
+    })
     return false;
 }
 
@@ -58,12 +58,12 @@ _.sum = function(collection) {
 
 _.first = function(collection,fun) {
     var number = 0;
-    for (var i = 0; i < collection.length; i++) {
-        if(fun(collection[i])) {
-            number = collection[i];
+    _.foreach(collection,function(n){
+        if(fun(n)) {
+            number = n;
             return number;
         }
-    }
+    })
 }
 
 _.last = function(collection,fun) {
@@ -76,7 +76,15 @@ _.last = function(collection,fun) {
     }
 }
 
-
+_.filter = function(collection,fun) {
+    var result = [] ;
+    _.foreach(collection,function(n) {
+        if(fun(n)) {
+            result[result.length] = n;
+        }
+    })
+    return result;
+}
 
 
 module.exports = _;
