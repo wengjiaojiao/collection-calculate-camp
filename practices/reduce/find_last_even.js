@@ -3,13 +3,14 @@
 function find_last_even(collection) {
     var _  =require('../../mylodash.js');
 
-    return _.last(collection,find);
-}
+    var last = _.filter(collection,function(n){
+        if(n % 2 == 0) {
+            return n;
+        }
+    })
 
-function find(n){
-    if( n % 2 == 0 ) {
-        return true ;
-    }
+    return _.reduce(last,function(a,b){
+        return b;
+    })
 }
-
 module.exports = find_last_even;
