@@ -9,6 +9,7 @@ _.foreach = function(collection,fun) {
     }
 }
 
+
 _.map = function(collection,fun) {
     var result = [];
 
@@ -26,28 +27,6 @@ _.exist = function(collection,element) {
         }
     })
     return false;
-}
-
-
-_.sum = function(collection) {
-    var sum = 0;
-
-    _.foreach(collection,function(n){
-        sum += n;
-    })
-    return sum;
-}
-
-
-_.first = function(collection,fun) {
-    var number = 0;
-
-    _.foreach(collection,function(n){
-        if(fun(n)) {
-            number = n;
-            return number;
-        }
-    })
 }
 
 
@@ -87,4 +66,5 @@ _.reduce = function(collection,fun) {
     });
     return result;
 }
+
 module.exports = _;
