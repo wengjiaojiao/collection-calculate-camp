@@ -1,16 +1,14 @@
 'use strict';
 
 function choose_multiples_of_three(collection) {
-    var time = [];
+    var _ = require('../../mylodash.js');
 
-    for(var i = 0; i < collection.length; i++) {
-        if(collection[i] % 3 == 0) {
-            time.push(collection[i]);
-        }
-    }
-    return time;
+    return _.filter(collection, three);
 }
 
+function three(n){
+    return n % 3 == 0;
+}
 module.exports = choose_multiples_of_three;
 
 
