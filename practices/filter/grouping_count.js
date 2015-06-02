@@ -2,15 +2,16 @@
 
 function grouping_count(collection) {
     var number = {};
+    var _ = require("../../mylodash.js");
 
-    for(var i = 0;i < collection.length;i++) {
-         if(!! number[collection[i]]) {
-             number[collection[i]] ++;
-         }else {
-             number[collection[i]] = 0;
-             number[collection[i]] ++;
-         }
-     }
+    _.foreach(collection,function(n){
+        if(!! number[n]) {
+            number[n] ++;
+        }else {
+            number[n] = 0;
+            number[n] ++;
+        }
+    })
      return number;
  }
 
