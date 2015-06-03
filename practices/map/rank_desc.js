@@ -1,17 +1,8 @@
 'use strict';
+var _ = require('../../mylodash.js');
 var rank_desc = function(collection){
-    var number;
-
-    for (var i = 0; i < collection.length; i++) {
-        for (var j = i + 1; j < collection.length; j++) {
-            if(collection[i] > collection[j]) {
-                number = collection[i];
-                collection[i] = collection[j];
-                collection[j] = number;
-            }
-        }
-    }
-    return collection;
+    return _.rank(collection , true);
 }
+
 
 module.exports = rank_desc;
