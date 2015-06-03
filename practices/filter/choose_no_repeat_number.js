@@ -1,33 +1,31 @@
 'use strict';
 
 function choose_no_repeat_number(collection) {
-    var no_repeat = [];
+    var result = [];
 
-    for(var i = 0; i < collection.length; i++) {
-        if(collection[i] === collection[i+1]) {
-            continue;
+    each(collection, function(n) {
+        if(exist(result, n)) {
+            result.push(n);
         }
-        no_repeat.push(collection[i]);
-    }
-    return no_repeat;
+    });
+    return result;
 }
-module.exports = choose_no_repeat_number;
 
-/*
-    var no_repeat = [];
-
-    for(var i = 0; i < collection.length; i++) {
-        var exist = false;
-
-        for(var j = 0; j < no_repeat.length; j++) {
-            if(collection[i] === no_repeat[j]) {
-                exist = true;
-            }
-        }
-        if(!exist) {
-        no_repeat.push(collection[i]);
-        }
+function each(collection, fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i], i);
     }
-    return no_repeat;
-*/
-//return _.uniq(collection,true);
+}
+
+function exist(collection, element) {
+    var result = true;
+
+    each(collection, function(n) {
+        if(n === element) {
+            result = false;
+        }
+    });
+    return result;
+}
+
+module.exports = choose_no_repeat_number;
