@@ -21,12 +21,14 @@ _.map = function(collection,fun) {
 
 
 _.exist = function(collection,element) {
+    var result = true;
+
     _.foreach(collection,function(n){
         if(n === element) {
-            return true;
+            result = false;
         }
     });
-    return false;
+    return result;
 }
 
 
