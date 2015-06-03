@@ -1,20 +1,17 @@
 'use strict';
 
 function even_to_letter(collection) {
+    var _ = require('../../../mylodash.js');
     var temp = [];
 
-    for (var i = 0; i < collection.length; i++) {
-        if( collection[i] % 2 ===0) {
-            temp[temp.length] = collection[i];
-        }
-    }
-    var map = [];
+    temp = _.filter(collection,function(n){
+        return n % 2 === 0;
+    });
 
-    for(var i = 0; i < temp.length; i++) {
-        var letter = String.fromCharCode(temp[i]+96);
-        map[map.length] = letter;
-    }
-    return map;
+    return _.map(temp,function(n){
+        return String.fromCharCode(n+96);
+
+    });
 }
 
 module.exports = even_to_letter;
