@@ -1,8 +1,7 @@
 'use strict';
+var _  =require('../../mylodash.js');
 
 function find_last_even(collection) {
-    var _  =require('../../mylodash.js');
-
     var last = _.filter(collection,function(n){
         if(n % 2 == 0) {
             return n;

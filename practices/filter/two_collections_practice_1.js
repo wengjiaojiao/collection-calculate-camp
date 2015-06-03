@@ -1,8 +1,7 @@
 'use strict';
+var _ =require("../../mylodash.js");
 
 function choose_common_elements(collection_a, collection_b) {
-
-    var _ =require("../../mylodash.js");
     var result = [];
 
      _.filter(collection_a,function(n) {

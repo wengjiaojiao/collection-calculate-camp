@@ -1,7 +1,7 @@
 'use strict';
+var _ =require("../../../mylodash.js");
 
 function average_to_letter(collection) {
-    var _ =require("../../../mylodash.js");
     var sum = _.reduce(collection,function(a,b){
         return a + b;
     });

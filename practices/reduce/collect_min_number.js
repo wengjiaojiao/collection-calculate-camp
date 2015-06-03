@@ -1,8 +1,7 @@
 'use strict';
+var _ = require("../../mylodash.js");
 
 function collect_min_number(collection) {
-    var _ = require("../../mylodash.js");
-
     return _.reduce(collection,min);
 }
 

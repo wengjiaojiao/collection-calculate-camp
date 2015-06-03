@@ -1,8 +1,8 @@
 'use strict';
+var _ = require("../../mylodash.js");
 
 function grouping_count(collection) {
     var number = {};
-    var _ = require("../../mylodash.js");
 
     _.foreach(collection,function(n){
         if(!! number[n]) {

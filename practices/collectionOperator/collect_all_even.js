@@ -1,7 +1,8 @@
 'use strict';
+var _ = require('../../mylodash.js');
 
 function collect_all_even(collection) {
-    var _ = require('../../mylodash.js');
+
 
     return _.filter(collection,even);
 }

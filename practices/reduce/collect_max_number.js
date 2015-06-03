@@ -1,7 +1,8 @@
 'use strict';
+var _ = require("../../mylodash.js");
 
 function collect_max_number(collection) {
-    var _ = require("../../mylodash.js");
+
 
     return _.reduce(collection,max);
 }

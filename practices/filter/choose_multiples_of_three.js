@@ -1,7 +1,8 @@
 'use strict';
+var _ = require('../../mylodash.js');
 
 function choose_multiples_of_three(collection) {
-    var _ = require('../../mylodash.js');
+
 
     return _.filter(collection, three);
 }

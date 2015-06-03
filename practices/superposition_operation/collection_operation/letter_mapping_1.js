@@ -1,7 +1,7 @@
 'use strict';
+var _ = require('../../../mylodash.js');
 
 function even_to_letter(collection) {
-    var _ = require('../../../mylodash.js');
     var temp = [];
 
     temp = _.filter(collection,function(n){

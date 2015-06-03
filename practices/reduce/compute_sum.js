@@ -1,8 +1,7 @@
 'use strict';
+var _ = require('../../mylodash.js');
 
 function calculate_elements_sum(collection) {
-    var _ = require('../../mylodash.js');
-
     return _.reduce(collection,sum);
 }
 

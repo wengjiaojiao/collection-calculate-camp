@@ -1,8 +1,7 @@
 'use strict';
+var _ = require("../../mylodash.js");
 
 function compute_average(collection) {
-    var _ = require("../../mylodash.js");
-
     return _.reduce(collection,sum)/collection.length;
 }
 function sum(a,b) {

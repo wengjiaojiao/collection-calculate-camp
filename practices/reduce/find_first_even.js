@@ -1,7 +1,7 @@
 'use strict';
-function find_first_even(collection) {
-    var _  =require('../../mylodash.js');
+var _  =require('../../mylodash.js');
 
+function find_first_even(collection) {
     var first = _.filter(collection,function(n){
         if(n % 2 == 0) {
             return n;

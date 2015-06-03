@@ -1,7 +1,7 @@
 'use strict';
+var _ = require("../../../mylodash.js");
 
 function hybrid_operation(collection) {
-    var _ = require("../../../mylodash.js");
     var temp = _.map(collection,function(n) {
         return n * 3 + 2 ;
     });

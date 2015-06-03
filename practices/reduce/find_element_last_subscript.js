@@ -2,6 +2,7 @@
 
 function calculate_elements_sum(collection, element) {
     var result = 0;
+    
     each(collection, function(n, i){
         if(n === element) {
             result = i;

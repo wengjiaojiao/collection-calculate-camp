@@ -1,7 +1,7 @@
 'use strict';
-var map_to_three_multiples = function(collections){
-    var _ = require("../../mylodash.js");
+ var _ = require("../../mylodash.js");
 
+var map_to_three_multiples = function(collections){
     return _.map(collections,three);
 }
 
