@@ -15,7 +15,7 @@ _.map = function(collection,fun) {
 
     _.foreach(collection,function(n) {
         result.push(fun(n));
-    })
+    });
     return result;
 }
 
@@ -25,7 +25,7 @@ _.exist = function(collection,element) {
         if(n === element) {
             return true;
         }
-    })
+    });
     return false;
 }
 
@@ -37,7 +37,7 @@ _.filter = function(collection,fun) {
         if(fun(n)) {
             result.push(n);
         }
-    })
+    });
     return result;
 }
 
