@@ -57,4 +57,18 @@ _.reduce = function(collection,fun) {
     return result;
 }
 
+_.rank = function(collection, judge) {
+    var number;
+
+    for (var i = 0; i < collection.length; i++) {
+        for (var j = i + 1; j < collection.length; j++) {
+            if(judge ? collection[i] > collection[j] : collection[i] < collection[j]) {
+                number = collection[i];
+                collection[i] = collection[j];
+                collection[j] = number;
+            }
+        }
+    }
+    return collection;
+}
 module.exports = _;
