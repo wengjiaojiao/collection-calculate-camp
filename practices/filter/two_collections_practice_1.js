@@ -1,16 +1,18 @@
 'use strict';
 
 function choose_common_elements(collection_a, collection_b) {
-    var same = [];
 
-    for(var i=0; i<collection_a.length; i++) {
-        for(var j=0; j<collection_b.length; j++) {
-            if(collection_a[i] === collection_b[j]) {
-                same.push(collection_a[i]);
+    var _ =require("../../mylodash.js");
+    var result = [];
+
+     _.filter(collection_a,function(n) {
+        _.foreach(collection_b,function(m) {
+            if(n === m) {
+                result.push(n);
             }
-        }
-    }
-    return same;
+        })
+    })
+    return result;
 }
 
 module.exports = choose_common_elements;
