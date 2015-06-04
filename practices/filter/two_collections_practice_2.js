@@ -1,21 +1,33 @@
 'use strict';
 
 function choose_no_common_elements(collection_a, collection_b) {
-    for(var i = 0; i < collection_a.length; i++) {
-        for(var j = 0; j < collection_b.length; j++) {
-            if(collection_a[i] === collection_b[j]) {
-                collection_a.splice(i,1);
-                collection_b.splice(j,1);
-            }
+    var result = [];
+
+    each(collection_a,function(n) {
+        if(exist(collection_b,n)) {
+            result.push(n);
         }
-    }
-    for (var a = 0; a < collection_b.length; a++) {
-        collection_a[collection_a.length] = collection_b[a];
-    }
-    return collection_a;
+    });
+    return result;
 }
 
 module.exports = choose_no_common_elements;
 
+function each(collection, fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i], i);
+    }
+}
+
+function exist(collection, element) {
+    var result = true;
+
+    each(collection, function(n) {
+        if(n === element) {
+            result = false;
+        }
+    });
+    return result;
+}
 
 //return _.difference(collection_a,collection_b);
