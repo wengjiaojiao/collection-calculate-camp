@@ -1,30 +1,33 @@
 'use strict';
 
 function get_intersection(collection_a, collection_b) {
-    var collection = [];
+    var result = [];
 
-    for(var i=0; i<collection_b.length; i++) {
-        for(var j=0; j< collection_a.length; j++) {
-            if(collection_b[i] === collection_a[j]) {
-                collection.push(collection_b[i]);
-            }
+    each(collection_b, function(n) {
+        if(exist(collection_a, n)) {
+            result.push(n);
         }
-    }
-
-    return collection;
+    });
+    return result;
 }
 
+
+
+function each(collection, fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i],i);
+    }
+}
+function exist(collection, element) {
+    var result = false;
+
+    each(collection, function(n, i) {
+        if(n === element) {
+            result = true;
+        }
+    });
+    return result;
+}
+
+
 module.exports = get_intersection;
-
-
-
-
-
-
-
-
-
-
-
-//var _ = require('../lodash/array');
-//return  _.intersection(collection_b,collection_a);
