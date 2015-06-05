@@ -21,11 +21,11 @@ _.map = function(collection,fun) {
 
 
 _.exist = function(collection,element) {
-    var result = true;
+    var result = false;
 
     _.foreach(collection,function(n){
         if(n === element) {
-            result = false;
+            result = true;
         }
     });
     return result;
@@ -35,8 +35,8 @@ _.exist = function(collection,element) {
 _.filter = function(collection,fun) {
     var result = [] ;
 
-    _.foreach(collection,function(n) {
-        if(fun(n)) {
+    _.foreach(collection,function(n, i) {
+        if(fun(n, i)) {
             result.push(n);
         }
     });
@@ -57,12 +57,13 @@ _.reduce = function(collection,fun) {
     return result;
 }
 
-_.rank = function(collection, judge) {
+
+_.rank = function(collection, fun) {
     var number;
 
     for (var i = 0; i < collection.length; i++) {
         for (var j = i + 1; j < collection.length; j++) {
-            if(judge ? collection[i] > collection[j] : collection[i] < collection[j]) {
+            if(fun(collection[i], collection[j])) {
                 number = collection[i];
                 collection[i] = collection[j];
                 collection[j] = number;
@@ -70,5 +71,31 @@ _.rank = function(collection, judge) {
         }
     }
     return collection;
+}
+
+
+_.range = function(a, b) {
+    var step = Math.abs(b - a) / (b - a);
+    var count = (b - a) / step;
+    var result = [];
+
+    for (var i = 0; i <= count; i++) {
+        var item = a + i * step;
+        result.push(item);
+    }
+    return result;
+}
+
+
+_.median = function(collection) {
+    var median;
+    var middle = parseInt(collection.length / 2);
+
+    if(collection.length % 2 ===0) {
+        median = (collection[middle] + collection[middle - 1]) / 2;
+    }else {
+        median = collection[middle];
+    }
+    return median;
 }
 module.exports = _;
