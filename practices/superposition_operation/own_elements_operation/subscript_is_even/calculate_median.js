@@ -5,15 +5,11 @@ var calculate_median = function(collection){
         return i % 2 === 0;
     });
 
-    var middle = parseInt(num_array.length / 2);
-
-    if(num_array.length % 2 ==0) {
-        median = (num_array[middle] + num_array[middle - 1])/2;
-    }else {
-        median = num_array[middle];
-    }
-    return median;
+    return cal_median(num_array);
 };
+
+module.exports = calculate_median;
+
 
 function each(collection, fun) {
     for (var i = 0; i < collection.length; i++) {
@@ -31,4 +27,15 @@ function filter(collection, fun) {
     });
     return result;
 }
-module.exports = calculate_median;
+
+function cal_median(collection) {
+    var median;
+    var middle = parseInt(collection.length / 2);
+
+    if(collection.length % 2 === 0) {
+        median = (collection[middle] + collection[middle -1]) / 2;
+    }else {
+        median = collection[middle];
+    }
+    return median;
+}
