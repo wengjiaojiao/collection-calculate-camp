@@ -2,15 +2,8 @@
 
 function median_to_letter(collection) {
     var median;
-    var middle = parseInt(collection.length / 2);
 
-    if(collection.length % 2 == 0 ) {
-        median = (collection[middle] + collection[middle-1]) / 2;
-    }else {
-        median = collection[middle];
-    }
-    median = Math.ceil(median);
-
+    median = Math.ceil(cal_median(collection));
     var SIMPLE = 26;
     var x = 0;
     var letter ;
@@ -27,3 +20,15 @@ function median_to_letter(collection) {
 }
 
 module.exports = median_to_letter;
+
+function cal_median(collection) {
+    var median;
+    var middle = parseInt(collection.length / 2);
+
+    if(collection.length % 2 === 0) {
+        median = (collection[middle] + collection[middle - 1]) / 2;
+    }else {
+        median = collection[middle];
+    }
+    return median;
+}
