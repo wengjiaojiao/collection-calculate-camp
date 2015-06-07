@@ -1,13 +1,22 @@
 'use strict';
 
 function compare_collections(collection_a, collection_b) {
-    for (var i = 0; i < collection_a.length; i++) {
-        if(collection_a.length != collection_b.length) {
-            break;
-        }
-        if(collection_a[i] === collection_b[i]) {
-            return true;
-        }
+    var result = true;
+
+    if(collection_a.length === collection_b.length) {
+        each(collection_a, function(n, i) {
+            if(n != collection_b[i]) {
+                result = false;
+            }
+        });
     }
+    return result;
 }
 module.exports = compare_collections;
+
+
+function each(collection, fun) {
+    for (var i = 0; i < collection.length; i++) {
+        fun(collection[i], i);
+    }
+}
